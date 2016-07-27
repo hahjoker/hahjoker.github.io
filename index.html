@@ -9,6 +9,8 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="assets/js/jquery-3.1.0.min.js"></script>
+		<script src="assets/js/jquery.flip.min.js"></script>
 	</head>
 	<body class="is-loading">
 
@@ -20,16 +22,19 @@
 						<header>
 							<p>UNDER CONSTRUCTION</p>
 							<div id="card">
-							  	<div class="front">
-							    <span class="avatar"><img src="images/avatar.png" alt="" height="122" width="122" /></span>
-							  	</div>
-							  	<div class="back">
-							    	Back content
-							  	</div>
+									<div class="front">
+									<span class="avatar"><img src="images/avatar.png" alt="" height="150" width="150" /></span>
+									</div>
+									<div class="back">
+
+									</div>
 							</div>
-							<h1>Pranav Chaudhari</h1>
-							<p>Living large baby we livin' so</p>
 						</header>
+						<br></br>
+						<br></br>
+						<br></br>
+						<h1>Pranav Chaudhari</h1>
+						<p>Living large baby we livin' so</p>
 						<!--
 						<hr />
 						<h2>Extra Stuff!</h2>
@@ -93,13 +98,14 @@
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
-			<script>
-			$("#card").flip({
+			<script type="text/javascript">
+			$(function(){
+
+				$("#card").flip({
 				  axis: 'y',
-				  trigger: 'click'
+				  trigger: 'hover'
 				});
+			});
 			</script>
-			<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-			<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 	</body>
 </html>

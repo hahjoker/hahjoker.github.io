@@ -19,9 +19,16 @@
 					<section id="main">
 						<header>
 							<p>UNDER CONSTRUCTION</p>
-							<span class="avatar"><img src="images/avatar.png" alt="" height="122" width="122" /></span>
+							<div id="card">
+							  	<div class="front">
+							    <span class="avatar"><img src="images/avatar.png" alt="" height="122" width="122" /></span>
+							  	</div>
+							  	<div class="back">
+							    	Back content
+							  	</div>
+							</div>
 							<h1>Pranav Chaudhari</h1>
-							<p>Living large baby we're living so</p>
+							<p>Living large baby we livin' so</p>
 						</header>
 						<!--
 						<hr />
@@ -86,6 +93,13 @@
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
-
+			<script>
+			$("#card").flip({
+				  axis: 'y',
+				  trigger: 'click'
+				});
+			</script>
+			<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+			<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 	</body>
 </html>

@@ -22,8 +22,8 @@ $(document).ready(function(){
       var randomNumber= Math.floor(Math.random()*sourceLength);
 			var flip = $("#card").data("flip-model");
 			var toomuch='';
-			var COMEON=$('#ayy');
 			if(flip.isFlipped){
+				var COMEON=$('#ayy');
 			var toomuch=sMH[randomNumber].quote;
 			}
 			COMEON.html('');

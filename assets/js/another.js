@@ -10,7 +10,7 @@ $(document).ready(function(){
 				quote: "too lazy to come up with more of these"
 			},
 			{
-				quote: "thanks abdall"
+				quote: "<a href='./listen.html'>HEY ABDALL</a>"
 			}
 	];
     $("#card").flip({

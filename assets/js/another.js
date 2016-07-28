@@ -21,7 +21,7 @@ $(document).ready(function(){
       var sourceLength = sMH.length;
       var randomNumber= Math.floor(Math.random()*sourceLength);
 			var flip = $("#card").data("flip-model");
-			var toomuch='';
+			var toomuch='<p></p>';
 			if(flip.isFlipped){
 				var COMEON=$('#ayy');
 			var toomuch=sMH[randomNumber].quote;

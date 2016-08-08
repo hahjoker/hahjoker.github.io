@@ -7,7 +7,7 @@ $(document).ready(function(){
 				quote: "I thought you were my boy"
 			},
 			{
-				quote: "too lazy to come up with more of these"
+				quote: "☂♞♞♞♞ƛɌ"
 			},
 			{
 				quote: "<a href='./listen.html'>HEY ABDALL</a>"

@@ -13,6 +13,20 @@ $(document).ready(function(){
 				quote: "<a href='./listen.html'>HEY ABDALL</a>"
 			}
 	];
+	var narcissism=[
+		{
+			quote:"av1.png",
+		},
+		{
+			quote: "av.png"
+		},
+		{
+			quote: "avatar.png"
+		},
+		{
+			quote: "av2.png"
+		}
+		];
     $("#card").flip({
       axis: 'y',
       trigger: 'click'
@@ -22,11 +36,14 @@ $(document).ready(function(){
       var randomNumber= Math.floor(Math.random()*sourceLength);
 			var flip = $("#card").data("flip-model");
 			var toomuch='';
+			var lmk='';
 			if(flip.isFlipped){
 				var COMEON=$('#ayy');
 			var toomuch=sMH[randomNumber].quote;
+			var lmk=narcissism[randomNumber].quote;
 			}
 			COMEON.html('');
       COMEON.append('<p>'+toomuch+'</p>');
+			document.getElementById("me").src="images/"+lmk;
     });
 });

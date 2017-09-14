@@ -1,7 +1,7 @@
 $(document).ready(function(){
 		var sMH=[
 		  {
-	    	quote:"<a href='https://www.sigmetrics.org/sigmetrics2017/'>I'm published</a>",
+	    	quote:"<a href='https://www.cs.rutgers.edu/~zz124/sigmetrics17.pdf'>I'm published</a>",
 	    },
 			{
 				quote: "I thought you were my boy"

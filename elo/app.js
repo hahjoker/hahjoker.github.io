@@ -16,7 +16,23 @@ firestore.settings(settings);
 let newUser = document.querySelector('#newUser');
 var usersCollectionRef = firestore.collection('users');
 
-newUser.addEventListener('click', function() {
+function newUsers(){
+    var person = prompt("Please enter your name", "");
+    usersCollectionRef.doc(person).set({
+        name: person,
+        elo: 1000
+    }).then(function(docRefs) {
+        console.log("Document written with ID: ", docRefs.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+    setTimeout(myFunction, 2000);
+};
+function myFunction(){
+    window.location="app.html";
+}
+/*newUser.addEventListener('click', function() {
     var person = prompt("Please enter your name", "");
     usersCollectionRef.doc(person).set({
         name: person,
@@ -28,7 +44,7 @@ newUser.addEventListener('click', function() {
         console.error("Error adding document: ", error);
     });
 
-});
+});*/
 function tablegen(){
     var myTableDiv = document.getElementById("leaderboard")
     var tableBody = document.getElementById('board')
@@ -54,6 +70,7 @@ function tablegen(){
     });
 
 };
+
 function listgen(){
     var i=0;
     var stock = new Array()

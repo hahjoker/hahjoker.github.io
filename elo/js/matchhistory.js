@@ -1,34 +1,13 @@
-var config = {
-    apiKey: "AIzaSyDgl3nyuro0aofZFSd1wuBxqwDtueCdAo4",
-    authDomain: "moviequeuelist.firebaseapp.com",
-    databaseURL: "https://moviequeuelist.firebaseio.com",
-    projectId: "moviequeuelist",
-    storageBucket: "moviequeuelist.appspot.com",
-    messagingSenderId: "642705972248"
-};
-firebase.initializeApp(config);
-const firestore = firebase.firestore();
-const settings = {/* your settings... */ timestampsInSnapshots: true };
-firestore.settings(settings);
+
 var matchRef = firestore.collection('matchhistory');
 
 function tablegen() {
     var tableBody = document.getElementById('board');
     var i = 0;
     var stock = new Array();
-    var winner;
-    var loser;
-    var people = new Array();
     matchRef.get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
             //console.log(doc.id, " => ", doc.data().elo);
-            winner = doc.data.winner;
-            matchRef.doc(doc.id).collection("matches").get().then(function (querySnapshot) {
-                console.log(querySnapshot);
-                querySnapshot.forEach(function (doc) {
-                    console.log(doc.id, " => ", doc.data());
-                })
-            });
             stock[i] = new Array(doc.id, doc.data().winner, doc.data().loser);
             //console.log(stock[i]);
             i++;
@@ -40,7 +19,6 @@ function tablegen() {
                 td.appendChild(document.createTextNode(stock[i][j]));
                 if (j == 0) {
                     td.id = stock[i][j];
-                    td.setAttribute('href', "#");
                     td.setAttribute('onClick', "sendOff(this.id)");
                 }
                 tr.appendChild(td)
@@ -52,5 +30,6 @@ function tablegen() {
 };
 
 function sendOff(clicked) {
-    alert(clicked);
+    localStorage["matchid"]=clicked;
+    window.location="series.html";
 }

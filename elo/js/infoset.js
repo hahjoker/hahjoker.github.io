@@ -192,7 +192,7 @@ function testResults(form) {
         champWL(localStorage["name2"], localStorage["name1"], form.g3char2.value, form.g3char1.value, 2);
 
     }
-    setTimeout(move,10);
+    setTimeout(move,4000);
 }
 function move(){
     window.location = "app.html";

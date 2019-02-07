@@ -6,8 +6,8 @@ $(document).ready(function () {
     
     var dates=localStorage["matchid"].split("|");
     var date=dates[0].split("-");
-    console.log(date);
-    console.log(dates[1]);
+    //console.log(date);
+    //console.log(dates[1]);
     document.getElementById("timetitle").innerText = dates[1];
     document.getElementById("datetitle").innerText = date[1]+"-"+date[0]+"-"+date[2];
     document.title = dates[1]+"|"+date[1]+"-"+date[0]+"-"+date[2];
@@ -16,10 +16,10 @@ $(document).ready(function () {
             $("#player1").text(doc.data().p1);
             $("#player2").text(doc.data().p2);
         } else {
-            console.log("No such document!");
+            //console.log("No such document!");
         }
     }).catch(function (error) {
-        console.log("Error getting document:", error);
+        //console.log("Error getting document:", error);
     });
     tablegen();
 });
@@ -30,7 +30,7 @@ function tablegen() {
     var stock = new Array();
     matchRef.get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
-            console.log(doc.id, " => ", doc.data().c1);
+            //console.log(doc.id, " => ", doc.data().c1);
             stock[i] = new Array(i + 1, doc.data().c1, doc.data().c2, doc.data().winner);
             i++;
         });

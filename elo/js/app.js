@@ -9,10 +9,10 @@ function newUsers() {
         gamesplayed: 0,
         champsplayed: [{ champ: "", wins: 0, totalgamesplayed: 0 }]
     }).then(function (docRefs) {
-        console.log("Document written with ID: ", docRefs.id);
+     //   console.log("Document written with ID: ", docRefs.id);
     })
         .catch(function (error) {
-            console.error("Error adding document: ", error);
+          //  console.error("Error adding document: ", error);
         });
     setTimeout(myFunction, 2000);
 };
@@ -34,9 +34,9 @@ function tablegen() {
 
     usersCollectionRef.orderBy("elo", 'desc').get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
-            console.log(doc.id, " => ", doc.data().elo);
+       //     console.log(doc.id, " => ", doc.data().elo);
             stock[i] = new Array(doc.id, doc.data().elo);
-            console.log(stock[i]);
+          //  console.log(stock[i]);
             i++;
         });
         for (i = 0; i < stock.length; i++) {
@@ -61,7 +61,7 @@ function listgen() {
     var stock = new Array();
     usersCollectionRef.orderBy("elo", 'desc').get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
-            console.log(doc.id, " => ", doc.data().elo);
+           // console.log(doc.id, " => ", doc.data().elo);
             stock[i] = doc.id;
             i++;
         });

@@ -30,10 +30,10 @@ var i = 0;
 var stock = new Array();
 usersCollectionRef.where("name", "==", localStorage["profileID"]).get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
-        console.log(doc.id, " => ", doc.data().champsplayed);
+        //console.log(doc.id, " => ", doc.data().champsplayed);
         for(var z =0;z<doc.data().champsplayed.length;z++)
         {
-            console.log(doc.data().champsplayed[z].champ, doc.data().champsplayed[z].totalgamesplayed,doc.data().champsplayed[z].wins);
+           // console.log(doc.data().champsplayed[z].champ, doc.data().champsplayed[z].totalgamesplayed,doc.data().champsplayed[z].wins);
             stock[z]= new Array(doc.data().champsplayed[z].champ, doc.data().champsplayed[z].totalgamesplayed,doc.data().champsplayed[z].wins);
         }
     });
@@ -42,7 +42,7 @@ usersCollectionRef.where("name", "==", localStorage["profileID"]).get().then(fun
     for (i = 1; i < stock.length; i++) 
     {
         var li = document.createElement('li');
-        console.log(stock[i][0]);
+        //console.log(stock[i][0]);
         var nam = document.createElement('div');
         nam.className="large";
         var percentage = document.createElement('div');
@@ -52,7 +52,7 @@ usersCollectionRef.where("name", "==", localStorage["profileID"]).get().then(fun
         nam.appendChild(document.createTextNode("\t"));
 
         var zz=stock[i][2]/stock[i][1];
-        console.log(zz);
+        //console.log(zz);
         var a =zz*100;
         var u=a.toFixed(0)+"%";
         //td.style.width=u;
@@ -98,7 +98,7 @@ function matchWriter(){
         {
           brass=false;
         }
-        console.log(doc.id, " => ", doc.data());
+        //console.log(doc.id, " => ", doc.data());
         
         mm=document.createElement("li");
         //var aaa = document.createElement('div');
@@ -124,7 +124,7 @@ function matchWriter(){
         setBody.appendChild(mm);
         i++;
       }
-      console.log(i);
+      //console.log(i);
     });
 });
 }

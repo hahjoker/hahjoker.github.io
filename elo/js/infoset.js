@@ -142,10 +142,10 @@ function testResults(form) {
             p2: localStorage["name2"]
         })
             .then(function () {
-                console.log("Document successfully written!");
+                //console.log("Document successfully written!");
             })
             .catch(function (error) {
-                console.error("Error writing document: ", error);
+                //console.error("Error writing document: ", error);
             });
         winnerN = form.g1winner.value;
     }
@@ -156,10 +156,10 @@ function testResults(form) {
             p2: localStorage["name2"]
         })
             .then(function () {
-                console.log("Document successfully written!");
+                //console.log("Document successfully written!");
             })
             .catch(function (error) {
-                console.error("Error writing document: ", error);
+                //console.error("Error writing document: ", error);
             });
         winnerN = form.g3winner.value;
     }
@@ -325,10 +325,10 @@ function manohman(winner, loser) {
                         champsplayed: wchamparray
                     })
                         .then(function () {
-                            console.log("Document successfully written!");
+                          //  console.log("Document successfully written!");
                         })
                         .catch(function (error) {
-                            console.error("Error writing document: ", error);
+                            //console.error("Error writing document: ", error);
                         });
                     usersCollectionRef.doc(loser).set({
                         name: loser,
@@ -337,10 +337,10 @@ function manohman(winner, loser) {
                         champsplayed: lchamparray
                     })
                         .then(function () {
-                            console.log("Document successfully written!");
+                         //   console.log("Document successfully written!");
                         })
                         .catch(function (error) {
-                            console.error("Error writing document: ", error);
+                            //console.error("Error writing document: ", error);
                         });
                 })
             });
@@ -354,7 +354,7 @@ function getRatingDelta(myRating, opponentRating, mgr) {
     }
     var letsgetit = 1 / (1 + Math.pow(10, (opponentRating - myRating) / 400));
     //k factor of 32
-    console.log(Math.round(32 * (mgr - letsgetit)));
+    //console.log(Math.round(32 * (mgr - letsgetit)));
     return Math.round(32 * (mgr - letsgetit));
 }
 function getNewRating(myRating, opponentRating, mgr) {

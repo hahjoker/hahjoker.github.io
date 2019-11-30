@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Esteban&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+@font-face {
+  font-family: "transport";
+  src: url("Transport.ttf");
+}
+body {
+  background: rgb(20, 31, 41);
+  font-family: Esteban, sans-serif;
+  color: #ecf0f1;
+}
+.container {
+  display: flex; /* or inline-flex */
+}
+.ecf0f1{}
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style-type: none;
+}
+ul li {
+  padding: 6px 0;
+}
+ul li a {
+  position: relative;
+  display: block;
+  padding: 4px 0;
+  font-family: 'transport', sans-serif;
+  color: rgb(185, 185, 252);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+ul li a::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ecf0f1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+ul li a:hover {
+  color: #ecf0f1;
+}
+ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+h1{
+  padding: 6px 5px;
+  font-family: transport, sans-serif;
+  font-size: 40px;
+}
+.name{
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: transport, sans-serif;
+  font-size: 40px;
+}
+p{
+  padding: 6px 5px;
+}

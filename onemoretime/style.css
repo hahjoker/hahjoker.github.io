@@ -5,20 +5,30 @@
   font-family: "transport";
   src: url("Transport.ttf");
 }
+
 body {
   background: rgb(20, 31, 41);
   font-family: Esteban, sans-serif;
   color: #ecf0f1;
 }
+
 .container {
-  display: flex; /* or inline-flex */
-}
-.ecf0f1{}
-ul {
   display: flex;
+}
+.canvas-container{
+  position: relative;
+}
+canvas {
+  position: absolute;
+}
+
+ul {
+  position: absolute;
   flex-direction: column;
   align-items: start;
   list-style-type: none;
+  text-align: center;
+  left: 664px;
 }
 ul li {
   padding: 6px 0;
@@ -52,18 +62,17 @@ ul li a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
+
 h1{
-  padding: 6px 5px;
+  position:relative;
+  padding: 6px 10px;
+  left: 684px;
   font-family: transport, sans-serif;
   font-size: 40px;
+  color: #ecf0f1;
 }
-.name{
-  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: transport, sans-serif;
-  font-size: 40px;
-}
+
 p{
-  padding: 6px 5px;
+  display: flex;
+  padding: 6px 12px;
 }

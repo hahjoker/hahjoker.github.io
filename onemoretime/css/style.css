@@ -74,8 +74,11 @@ h1{
   font-size: 40px;
   color: #ecf0f1;
 }
-
+.yerko{
+  position: relative;
+}
 p{
+  position: relative;
   display: flex;
   padding: 6px 12px;
 }

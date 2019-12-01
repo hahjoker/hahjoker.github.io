@@ -171,8 +171,7 @@ function animate() {
 }
 animate();
 
-var w=document.getElementById("bgCanvas").width;
-console.log(w)
-var god = w/2
-document.getElementById("name").style.left = god.toString() +"px"
-document.getElementById("test").style.left = (god-20).toString()+"px"
+
+document.getElementById("name").style.left = ((document.getElementById("bgCanvas").width)/2.4-100).toString() +"px"
+document.getElementById("test").style.left = ((document.getElementById("bgCanvas").width)/2.4-20).toString()+"px"
+document.getElementById("name").style.paddingTop = ((document.getElementById("bgCanvas").height)/6).toString() +"px"

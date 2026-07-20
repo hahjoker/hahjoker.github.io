@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INNO Dinner Series — Seattle Private Supper Club</title>
+    <meta
+      name="description"
+      content="A Seattle private dinner series run out of a home kitchen — multi-course supper club nights built around a different theme each time: Around the World, Campfire / PNW Summer, Museum / Fossils. Planning notes, menus, and photos from each one."
+    />
+    <meta name="keywords" content="Seattle supper club, private dinner series, multi-course dinner, home pop-up dinner, INNO Dinner Series" />
+    <link rel="canonical" href="https://excelworld.xyz/inno/projects/dinners/index.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="INNO Dinner Series — Seattle Private Supper Club" />
+    <meta
+      property="og:description"
+      content="A Seattle private dinner series, one themed multi-course night at a time. Around the World, Campfire / PNW Summer, Museum / Fossils, and counting."
+    />
+    <meta property="og:image" content="https://excelworld.xyz/inno/projects/dinners/museum-fossils/hero.jpg" />
+    <meta property="og:url" content="https://excelworld.xyz/inno/projects/dinners/index.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="shortcut icon" href="../../../assets/favicons/favicon.ico" />
+    <link rel="stylesheet" href="dinners.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "INNO Dinner Series",
+      "url": "https://excelworld.xyz/inno/projects/dinners/index.html",
+      "description": "A Seattle private dinner series and supper club running themed, multi-course home dinners.",
+      "areaServed": "Seattle, WA",
+      "sameAs": ["https://www.instagram.com/sleeping.fits"]
+    }
+    </script>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <a class="hub-home" href="../index.html">&larr; INNO projects</a>
+
+    <header class="dinner-hero">
+      <p class="dinner-eyebrow">DINNERS · SEATTLE</p>
+      <h1>An ongoing series</h1>
+      <p class="dinner-meta">3 dinners so far — a private supper club, one theme at a time. planning notes, menus, and the rest of the roll for each.</p>
+    </header>
+
+    <div class="gallery-grid" style="margin-top: 6vh;">
+      <div class="gallery-item" style="max-width: 260px;">
+        <a href="around-the-world.html" style="text-decoration: none; color: inherit;">
+          <span class="photo-slot" style="width: 240px; aspect-ratio: 4/3;">
+            <img src="around-the-world/hero.jpg" alt="Around the World dinner, table set with flowers and a folded menu card." loading="lazy" />
+          </span>
+          <span class="gallery-item-caption">01 — Around the World</span>
+        </a>
+      </div>
+      <div class="gallery-item" style="max-width: 260px;">
+        <a href="campfire-pnw-summer.html" style="text-decoration: none; color: inherit;">
+          <span class="photo-slot" style="width: 240px; aspect-ratio: 4/3;">
+            <img src="campfire-pnw-summer/hero.jpg" alt="Campfire / PNW Summer dinner, an INNO Dinner Series sign next to camping gear." loading="lazy" />
+          </span>
+          <span class="gallery-item-caption">02 — Campfire / PNW Summer</span>
+        </a>
+      </div>
+      <div class="gallery-item" style="max-width: 260px;">
+        <a href="museum-fossils.html" style="text-decoration: none; color: inherit;">
+          <span class="photo-slot" style="width: 240px; aspect-ratio: 4/3;">
+            <img src="museum-fossils/hero.jpg" alt="Museum / Fossils dinner, table set in front of a city skyline view." loading="lazy" />
+          </span>
+          <span class="gallery-item-caption">03 — Museum / Fossils</span>
+        </a>
+      </div>
+    </div>
+
+    <section class="dinner-contact" id="contact">
+      <p class="dinner-contact-label">// want in on the next one?</p>
+      <p>
+        DM on Instagram
+        <a href="https://www.instagram.com/sleeping.fits" target="_blank" rel="noopener">@sleeping.fits</a>
+        or <a href="#" class="contact-email" data-user="pranav" data-domain="inno.supply">email</a>.
+      </p>
+    </section>
+
+    <footer class="dinner-foot">
+      <p>// more dinners get added here as they happen</p>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".contact-email").forEach(function (el) {
+        el.href = "mailto:" + el.dataset.user + "@" + el.dataset.domain;
+      });
+    </script>
+  </body>
+</html>

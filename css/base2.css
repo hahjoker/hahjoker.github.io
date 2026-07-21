@@ -22,17 +22,27 @@ body {
 }
 
 h2 {
-  font-size: 14.5vh;
+  height: 17.4vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-size: clamp(1.6rem, 4vw, 2.75rem);
   line-height: 1.2;
   letter-spacing: -0.01em;
   white-space: nowrap;
-  opacity: 0.1;
-  transition: 0s ease opacity;
+  opacity: 0.55;
+  transition: font-size 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
 }
 .active {
   opacity: 1;
 }
+h2:hover {
+  font-size: 14.5vh;
+  opacity: 1;
+}
 .projects {
+  position: relative;
+  z-index: 150;
   height: 100vh;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -88,6 +98,7 @@ html {
   left: 0;
   opacity: 0;
   overflow: hidden;
+  pointer-events: none;
   will-change: transform, filter;
 }
 

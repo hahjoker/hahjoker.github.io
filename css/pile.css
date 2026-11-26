@@ -1,0 +1,135 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.stage {
+  /* Design coordinates span about ±520 x and ±330 y; map them onto the viewport minus an edge margin
+     so the pile always fits, at any width, without JS. */
+  --mx: min(150px, 22vw);
+  --my: 110px;
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.corner {
+  position: absolute;
+  z-index: 9999;
+  margin: 0;
+  font-size: 18px;
+}
+.name {
+  top: 24px;
+  left: 24px;
+}
+.reset {
+  right: 24px;
+  bottom: 16px;
+  padding: 10px 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.item {
+  position: absolute;
+  left: calc(50% + var(--x) / 520 * (50vw - var(--mx)));
+  top: calc(50% + var(--y) / 330 * (50svh - var(--my)));
+  transform: translate(-50%, -50%) rotate(calc(var(--r) * 1deg));
+  box-shadow: 0 1px 3px rgba(26, 22, 18, 0.25);
+  text-decoration: none;
+  cursor: grab;
+  touch-action: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.item:hover {
+  opacity: 1;
+}
+.item:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+.item.is-held {
+  transform: translate(-50%, -50%) rotate(calc(var(--r) * 1deg)) scale(1.04);
+  box-shadow: 0 18px 40px rgba(26, 22, 18, 0.35);
+  cursor: grabbing;
+}
+.item img {
+  width: 100%;
+  pointer-events: none;
+}
+
+.item--trail,
+.item--photo {
+  width: clamp(calc(var(--w) * 0.5px), calc(var(--w) * 0.075vw), calc(var(--w) * 1px));
+}
+
+.label {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 6px;
+  padding: 4px 8px;
+  background: var(--paper);
+  font-size: 16px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.item--photo:hover .label,
+.item--photo:focus-visible .label {
+  display: block;
+}
+.item--photo.is-held .label {
+  display: none;
+}
+
+.item--title,
+.item--slip {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  min-width: clamp(calc(var(--w) * 0.5px), calc(var(--w) * 0.075vw), calc(var(--w) * 1px));
+  line-height: 1;
+  white-space: nowrap;
+}
+.item--title {
+  padding: 1.1em 0.76em;
+  background: #141210;
+  color: var(--paper);
+  font-size: clamp(20px, 2.65vw, 34px);
+}
+.item--slip {
+  min-height: 44px;
+  padding: 0 16px;
+  background: #fffaf2;
+  border: 1px solid #e2d6c4;
+  font-size: clamp(15px, 1.5vw, 19px);
+}
+
+@media (max-width: 599px) {
+  .item--title {
+    padding-inline: 0.5em;
+  }
+  .name {
+    top: 16px;
+    left: 16px;
+  }
+  .reset {
+    right: 16px;
+  }
+}
+
+@media (max-width: 599px) {
+  .stage {
+    --my: 70px;
+  }
+}

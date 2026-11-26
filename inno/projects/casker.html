@@ -23,28 +23,47 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="shortcut icon" href="../../assets/favicons/favicon.ico" />
-    <link rel="stylesheet" href="caskerstyle.css" />
+    <link rel="stylesheet" href="../../css/site.css" />
   </head>
-
   <body>
-    <div class="video-background">
-      <div class="video-foreground">
-        <iframe
-          src="https://www.youtube.com/embed/0Rz8iUjISag?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
+    <div class="page">
+      <nav class="bar">
+        <a class="back" href="../../index.html">&larr; back to the pile</a>
+      </nav>
 
-    <div id="vidtop-content">
-      <div class="vid-info">
-        <p class="vid-year">[2017-2018]</p>
-        <h1>[MV] 캐스커(Casker) - 여전히(Still)</h1>
-        <p>a summer long project dreamt on a multitude of bus rides</p>
-        <a href="index.html">&larr; more inno projects</a>
+      <div class="wrap wrap--narrow">
+        <header>
+          <h1>casker &mdash; &#50668;&#51204;&#55176; (still)</h1>
+          <p class="year">2017&ndash;2018</p>
+        </header>
+
+        <button class="player" type="button" aria-label="play the video">
+          <img src="../../img/casker-640.webp" width="640" height="360" alt="">
+          <span class="play" aria-hidden="true"></span>
+        </button>
+
+        <div class="stills">
+          <img src="../../img/film-1-480.webp" srcset="../../img/film-1-480.webp 480w, ../../img/film-1-960.webp 960w" sizes="(max-width: 699px) 100vw, 440px" width="480" height="318" alt="" loading="lazy" decoding="async">
+          <img src="../../img/film-2-480.webp" srcset="../../img/film-2-480.webp 480w, ../../img/film-2-960.webp 960w" sizes="(max-width: 699px) 100vw, 440px" width="480" height="318" alt="" loading="lazy" decoding="async">
+          <img src="../../img/film-3-480.webp" srcset="../../img/film-3-480.webp 480w, ../../img/film-3-960.webp 960w" sizes="(max-width: 699px) 100vw, 440px" width="480" height="318" alt="" loading="lazy" decoding="async">
+          <img src="../../img/film-4-480.webp" srcset="../../img/film-4-480.webp 480w, ../../img/film-4-960.webp 960w" sizes="(max-width: 699px) 100vw, 440px" width="480" height="318" alt="" loading="lazy" decoding="async">
+          <img src="../../img/film-5-480.webp" srcset="../../img/film-5-480.webp 480w, ../../img/film-5-960.webp 960w" sizes="(max-width: 699px) 100vw, 440px" width="480" height="318" alt="" loading="lazy" decoding="async">
+          <img src="../../img/film-6-480.webp" srcset="../../img/film-6-480.webp 480w, ../../img/film-6-960.webp 960w" sizes="(max-width: 699px) 100vw, 440px" width="480" height="318" alt="" loading="lazy" decoding="async">
+          <img src="../../img/film-7-480.webp" srcset="../../img/film-7-480.webp 480w, ../../img/film-7-960.webp 960w" sizes="(max-width: 699px) 100vw, 440px" width="480" height="318" alt="" loading="lazy" decoding="async">
+          <img src="../../img/film-8-480.webp" srcset="../../img/film-8-480.webp 480w, ../../img/film-8-960.webp 960w" sizes="(max-width: 699px) 100vw, 440px" width="480" height="419" alt="" loading="lazy" decoding="async">
+        </div>
       </div>
-      <!----div class="vid-info" style="margin-top: 300px">-->
     </div>
+    <script>
+      document.querySelector(".player").addEventListener("click", function () {
+        var frame = document.createElement("iframe");
+        frame.className = "player";
+        frame.src = "https://www.youtube-nocookie.com/embed/0Rz8iUjISag?autoplay=1";
+        frame.allow = "autoplay; encrypted-media; picture-in-picture";
+        frame.allowFullscreen = true;
+        frame.title = "casker, still";
+        this.replaceWith(frame);
+      });
+    </script>
   </body>
 </html>

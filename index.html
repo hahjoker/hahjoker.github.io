@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,90 +20,31 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/base2.css" />
-
-    <script type="module" src="js/mainMenu/scroll.js"></script>
-    <script type="module" src="js/imageTrail/index.js"></script>
-
-    <script src="./inno/clothing/js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/gsap.min.js"></script>
+    <link rel="preload" href="fonts/labrada-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/pile.css" />
   </head>
-  <body class="loading">
-    <div class="grain">
-      <div class="container seven">
-        <div class="content">
-          <div class="content__img">
-            <div
-              class="content__img-inner"
-              style="background-image: url(imgs/1.jpg)"
-            ></div>
-          </div>
-          <div class="content__img">
-            <div
-              class="content__img-inner"
-              style="background-image: url(imgs/2.jpg)"
-            ></div>
-          </div>
-          <div class="content__img">
-            <div
-              class="content__img-inner"
-              style="background-image: url(imgs/3.jpg)"
-            ></div>
-          </div>
-          <div class="content__img">
-            <div
-              class="content__img-inner"
-              style="background-image: url(imgs/4.jpg)"
-            ></div>
-          </div>
-          <div class="content__img">
-            <div
-              class="content__img-inner"
-              style="background-image: url(imgs/5.jpg)"
-            ></div>
-          </div>
-          <div class="content__img">
-            <div
-              class="content__img-inner"
-              style="background-image: url(imgs/6.jpg)"
-            ></div>
-          </div>
-          <div class="content__img">
-            <div
-              class="content__img-inner"
-              style="background-image: url(imgs/7.jpg)"
-            ></div>
-          </div>
-          <div class="content__img">
-            <div
-              class="content__img-inner"
-              style="background-image: url(imgs/8.png)"
-            ></div>
-          </div>
-        </div>
-      </div>
-      <section class="projects">
-        <h2>What's Next?</h2>
-        <h2><a href="inno/projects/index.html">Projects</a></h2>
-        <h2>Pranav Chaudhari</h2>
-        <h2>
-          <a href="https://www.instagram.com/sleeping.fits">Outfit Tracker</a>
-        </h2>
-
-        <h2><a href="inno/clothing/index.html">Clothing Design</a></h2>
-        <h2>
-          <a href="https://github.com/hahjoker" target="_blank" rel="noopener noreferrer">Github</a>
-        </h2>
-        <h2>
-          <a
-            href="https://people.cs.rutgers.edu/~zz124/sigmetrics17.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            >SIGMETRICS 2017</a
-          >
-        </h2>
-        <h2><a href="elo/app.html">SM4SH Elo (defunct)</a></h2>
-      </section>
-    </div>
+  <body>
+    <main class="stage">
+      <p class="corner name">pranav chaudhari</p>
+      <div class="item item--trail" style="--x:-300; --y:-60; --w:460; --r:-6"><img src="img/film-1-480.webp" srcset="img/film-1-480.webp 480w, img/film-1-960.webp 960w" sizes="(max-width: 599px) 40vw, 460px" width="480" height="318" alt="" decoding="async" draggable="false" fetchpriority="high"></div>
+      <div class="item item--trail" style="--x:280; --y:-120; --w:420; --r:8"><img src="img/film-2-480.webp" srcset="img/film-2-480.webp 480w, img/film-2-960.webp 960w" sizes="(max-width: 599px) 40vw, 420px" width="480" height="318" alt="" decoding="async" draggable="false" fetchpriority="high"></div>
+      <div class="item item--trail" style="--x:-120; --y:180; --w:400; --r:12"><img src="img/film-3-480.webp" srcset="img/film-3-480.webp 480w, img/film-3-960.webp 960w" sizes="(max-width: 599px) 40vw, 400px" width="480" height="318" alt="" decoding="async" draggable="false" fetchpriority="high"></div>
+      <div class="item item--trail" style="--x:220; --y:170; --w:420; --r:-10"><img src="img/film-5-480.webp" srcset="img/film-5-480.webp 480w, img/film-5-960.webp 960w" sizes="(max-width: 599px) 40vw, 420px" width="480" height="318" alt="" decoding="async" draggable="false" fetchpriority="high"></div>
+      <a class="item item--slip" href="https://people.cs.rutgers.edu/~zz124/sigmetrics17.pdf" target="_blank" rel="noopener noreferrer" draggable="false" style="--x:300; --y:270; --w:200; --r:6">SIGMETRICS 2017</a>
+      <a class="item item--slip" href="elo/app.html" draggable="false" style="--x:-330; --y:290; --w:150; --r:-9">SM4SH Elo</a>
+      <a class="item item--title" href="inno/projects/dinners/index.html" draggable="false" style="--x:-400; --y:-250; --w:240; --r:-14">dinners</a>
+      <a class="item item--photo" href="inno/projects/dinners/around-the-world.html" aria-label="around the world" draggable="false" style="--x:-220; --y:-90; --w:340; --r:-7"><img src="img/atw-hero-480.webp" srcset="img/atw-hero-480.webp 480w, img/atw-hero-960.webp 960w" sizes="(max-width: 599px) 40vw, 340px" width="480" height="352" alt="" decoding="async" draggable="false"><span class="label" aria-hidden="true">around the world</span></a>
+      <a class="item item--slip" href="https://github.com/hahjoker" target="_blank" rel="noopener noreferrer" draggable="false" style="--x:60; --y:320; --w:120; --r:3">github</a>
+      <a class="item item--title" href="inno/projects/casker.html" draggable="false" style="--x:440; --y:-40; --w:270; --r:9">short films</a>
+      <a class="item item--photo" href="inno/projects/casker.html" aria-label="casker — 여전히 (still)" draggable="false" style="--x:240; --y:-150; --w:340; --r:6"><img src="img/casker-480.webp" srcset="img/casker-480.webp 480w, img/casker-640.webp 640w" sizes="(max-width: 599px) 40vw, 340px" width="480" height="270" alt="" decoding="async" draggable="false"><span class="label" aria-hidden="true">casker — 여전히 (still)</span></a>
+      <a class="item item--slip" href="https://www.instagram.com/sleeping.fits" target="_blank" rel="noopener noreferrer" draggable="false" style="--x:130; --y:-310; --w:170; --r:-5">outfit tracker</a>
+      <a class="item item--photo" href="inno/projects/dinners/campfire-pnw-summer.html" aria-label="campfire / pnw summer" draggable="false" style="--x:-300; --y:140; --w:320; --r:10"><img src="img/cf-hero-480.webp" srcset="img/cf-hero-480.webp 480w, img/cf-hero-960.webp 960w" sizes="(max-width: 599px) 40vw, 320px" width="480" height="638" alt="" decoding="async" draggable="false"><span class="label" aria-hidden="true">campfire / pnw summer</span></a>
+      <a class="item item--title" href="inno/clothing/index.html" draggable="false" style="--x:-480; --y:40; --w:230; --r:7">clothing</a>
+      <a class="item item--photo" href="inno/clothing/index.html" aria-label="inno" draggable="false" style="--x:300; --y:120; --w:280; --r:-5"><img src="img/cl-inno-480.webp" srcset="img/cl-inno-480.webp 480w, img/cl-inno-768.webp 768w" sizes="(max-width: 599px) 40vw, 280px" width="480" height="480" alt="" decoding="async" draggable="false"><span class="label" aria-hidden="true">inno</span></a>
+      <a class="item item--slip" href="clothing.html" draggable="false" style="--x:-160; --y:-310; --w:170; --r:8">the 2011 page</a>
+      <a class="item item--photo" href="inno/projects/dinners/museum-fossils.html" aria-label="museum / fossils" draggable="false" style="--x:20; --y:0; --w:260; --r:-3"><img src="img/mf-hero-480.webp" srcset="img/mf-hero-480.webp 480w, img/mf-hero-960.webp 960w" sizes="(max-width: 599px) 40vw, 260px" width="480" height="640" alt="" decoding="async" draggable="false"><span class="label" aria-hidden="true">museum / fossils</span></a>
+    </main>
+    <script src="js/pile.js"></script>
   </body>
 </html>

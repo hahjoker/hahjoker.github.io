@@ -7,7 +7,7 @@ Writes img/sizes.json (name -> {width: [w, h]}) so pages can carry exact width/h
 import json
 import pathlib
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageStat
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "img"
@@ -21,12 +21,21 @@ def rows():
             yield ROOT / src, name, widths
 
 
+def paper_multiply(im):
+    """The source texture is opaque grey. Re-level it to white so background-blend-mode: multiply lays only its grain over any paper colour."""
+    grey = im.convert("L")
+    mean = ImageStat.Stat(grey).mean[0]
+    return grey.point(lambda v: min(255, max(0, round(255 + (v - mean) * 1.5)))).convert("RGB")
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     sizes = {}
     for src, name, widths in rows():
         im = ImageOps.exif_transpose(Image.open(src))
         im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
+        if name == "paper":
+            im = paper_multiply(im)
         targets = [im.width] if widths == "-" else [min(int(w), im.width) for w in widths.split(",")]
         for w in targets:
             h = round(im.height * w / im.width)

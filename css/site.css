@@ -1,0 +1,290 @@
+@font-face {
+  font-family: Labrada;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/labrada-latin.woff2) format("woff2");
+}
+@font-face {
+  font-family: Labrada;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/labrada-italic-latin.woff2) format("woff2");
+}
+
+:root {
+  --paper: #f8ecde;
+  --ink: #1a1612;
+  --muted: #5e554b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image: url(../img/paper.webp);
+  color: var(--ink);
+  font-family: Labrada, Georgia, serif;
+  font-size: 17px;
+}
+
+a {
+  color: var(--ink);
+}
+a:hover {
+  opacity: 0.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.page {
+  padding: 24px 24px 120px;
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.back {
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.wrap--narrow {
+  max-width: 760px;
+}
+
+h1 {
+  margin: 0;
+  padding: 120px 0 72px;
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* dinners overview */
+.dinners {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 56px 40px;
+  align-items: start;
+}
+.dinners a {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+}
+.dinners img {
+  width: 100%;
+}
+.dinners .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.dinners .name span:first-child {
+  font-size: 24px;
+}
+.dinners .name span:last-child,
+.dinners .count {
+  font-size: 15px;
+}
+.dinners .count {
+  font-style: italic;
+  color: var(--muted);
+}
+.invite {
+  margin: 0;
+  padding-top: 120px;
+}
+
+/* a single dinner */
+.dinner-head {
+  padding: 120px 0 64px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 48px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.dinner-head h1 {
+  padding: 0;
+}
+.dinner-head p {
+  margin: 12px 0 0;
+}
+.dinner-head img {
+  width: 270px;
+}
+
+.courses {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.course-text {
+  flex: 1 1 320px;
+  display: flex;
+  gap: 20px;
+}
+.course-num {
+  font-size: 15px;
+  padding-top: 10px;
+}
+.course-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.course h2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 30px;
+}
+.course p {
+  margin: 0;
+}
+.course .what {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.course .wine {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--muted);
+}
+.course img {
+  width: 200px;
+}
+
+.extras {
+  padding-top: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.next {
+  padding-top: 96px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+/* film page */
+.player {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 0;
+  background: var(--ink);
+  cursor: pointer;
+}
+.year {
+  margin: -48px 0 56px;
+}
+
+.player img,
+.player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+.player .play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 72px;
+  height: 72px;
+  margin: -36px 0 0 -36px;
+  border-radius: 50%;
+  background: var(--paper);
+}
+.player .play::after {
+  content: "";
+  position: absolute;
+  left: 29px;
+  top: 22px;
+  border-style: solid;
+  border-width: 14px 0 14px 22px;
+  border-color: transparent transparent transparent var(--ink);
+}
+
+.stills {
+  padding-top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.stills img {
+  width: 100%;
+}
+@media (min-width: 700px) {
+  .stills img {
+    width: 440px;
+  }
+  .stills img:nth-child(even) {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 599px) {
+  .page {
+    padding: 16px 16px 80px;
+  }
+  h1 {
+    padding: 72px 0 48px;
+  }
+  .dinner-head {
+    padding: 72px 0 48px;
+  }
+  .dinner-head img {
+    width: 200px;
+  }
+  .extras,
+  .next {
+    padding-top: 72px;
+  }
+  .invite {
+    padding-top: 72px;
+  }
+}

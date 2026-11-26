@@ -8,14 +8,19 @@
   var drag = null;
   var suppressClick = false;
 
-  function scale(name) {
-    return parseFloat(getComputedStyle(stage).getPropertyValue(name)) || 1;
+  // Pixels per design unit; mirrors the left/top formulas in css/pile.css.
+  function scales() {
+    var w = stage.clientWidth;
+    var h = stage.clientHeight;
+    var my = parseFloat(getComputedStyle(stage).getPropertyValue("--my"));
+    return { sx: (w / 2 - Math.min(150, 0.22 * w)) / 520, sy: (h / 2 - my) / 330 };
   }
 
   stage.addEventListener("pointerdown", function (e) {
     var el = e.target.closest(".item");
     if (!el || (e.pointerType === "mouse" && e.button !== 0)) return;
     el.style.zIndex = ++top;
+    var s = scales();
     drag = {
       el: el,
       id: e.pointerId,
@@ -23,8 +28,8 @@
       py: e.clientY,
       x: parseFloat(el.style.getPropertyValue("--x")),
       y: parseFloat(el.style.getPropertyValue("--y")),
-      sx: scale("--sx"),
-      sy: scale("--sy"),
+      sx: s.sx,
+      sy: s.sy,
       moved: false,
     };
   });

@@ -5,35 +5,15 @@ body {
 }
 
 .stage {
-  --sx: 1;
-  --sy: 1;
-  --ss: 1;
+  /* Design coordinates span about ±520 x and ±330 y; map them onto the viewport minus an edge margin
+     so the pile always fits, at any width, without JS. */
+  --mx: min(150px, 22vw);
+  --my: 110px;
   position: relative;
   height: 100svh;
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
-}
-@media (max-width: 1199px) {
-  .stage {
-    --sx: 0.8;
-    --sy: 0.85;
-    --ss: 0.82;
-  }
-}
-@media (max-width: 899px) {
-  .stage {
-    --sx: 0.6;
-    --sy: 0.8;
-    --ss: 0.66;
-  }
-}
-@media (max-width: 599px) {
-  .stage {
-    --sx: 0.36;
-    --sy: 0.62;
-    --ss: 0.5;
-  }
 }
 
 .corner {
@@ -61,8 +41,8 @@ body {
 
 .item {
   position: absolute;
-  left: calc(50% + var(--x) * var(--sx) * 1px);
-  top: calc(50% + var(--y) * var(--sy) * 1px);
+  left: calc(50% + var(--x) / 520 * (50vw - var(--mx)));
+  top: calc(50% + var(--y) / 330 * (50svh - var(--my)));
   transform: translate(-50%, -50%) rotate(calc(var(--r) * 1deg));
   box-shadow: 0 1px 3px rgba(26, 22, 18, 0.25);
   text-decoration: none;
@@ -89,7 +69,7 @@ body {
 
 .item--trail,
 .item--photo {
-  width: calc(var(--w) * var(--ss) * 1px);
+  width: clamp(calc(var(--w) * 0.5px), calc(var(--w) * 0.075vw), calc(var(--w) * 1px));
 }
 
 .label {
@@ -117,7 +97,7 @@ body {
   display: flex;
   align-items: center;
   width: max-content;
-  min-width: calc(var(--w) * var(--ss) * 1px);
+  min-width: clamp(calc(var(--w) * 0.5px), calc(var(--w) * 0.075vw), calc(var(--w) * 1px));
   line-height: 1;
   white-space: nowrap;
 }
@@ -125,14 +105,14 @@ body {
   padding: 1.1em 0.76em;
   background: #141210;
   color: var(--paper);
-  font-size: max(20px, calc(34px * var(--ss)));
+  font-size: clamp(20px, 2.65vw, 34px);
 }
 .item--slip {
   min-height: 44px;
   padding: 0 16px;
   background: #fffaf2;
   border: 1px solid #e2d6c4;
-  font-size: max(15px, calc(19px * var(--ss)));
+  font-size: clamp(15px, 1.5vw, 19px);
 }
 
 @media (max-width: 599px) {
@@ -145,5 +125,11 @@ body {
   }
   .reset {
     right: 16px;
+  }
+}
+
+@media (max-width: 599px) {
+  .stage {
+    --my: 70px;
   }
 }
